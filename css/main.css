@@ -1,0 +1,212 @@
+:root {
+    /* Images */
+    
+    /*Fonts*/
+    --body-font: arial; /* Body text font */
+    --header-font: 'terminal'; /* Font for headers */
+    
+    /* Colors */
+    /* If you want a transparent background for any element, set the value to none */
+    --background: radial-gradient(circle, rgba(0,212,255,0.20219425660889356) 0%, rgba(0,0,154,0.2974323518469888) 50%, rgba(2,0,36,1) 100%), url(/images/background-1.png); /*Main background color*/
+    --textcolor: #000000; /*Body text color*/
+    
+    --mainbg: #ffffff; /*Content background color*/
+    --mainlink: #000000; /*Content link color*/
+    --mainlinkhover: #7300ff; /*Content link hover color*/
+    
+    /*Header text colors*/
+    --h1color: #000000;
+    --h2color: #000000;
+    --h3color: #000000;
+    --h4color: #000000;
+    
+    --navbg: #ffffff; /*Sidebar background color*/
+    --navheader: #000000; /*Sidebar header color*/
+    --navborder: black; /*If you don't want a border under the headers in the menu, change this to none*/
+    
+    --navlink: #000000; /*Sidebar link color*/
+    --navlinkbg: none; /*Sidebar link background*/
+    --navlinkhover: #7300ff; /*Sidebar link hover color*/
+    --navlinkbghover: none; /*Sidebar link hover background*/
+    
+    --formbg: #ffffff; /*Form element background*/
+    --formtext:#000000; /*Form element text color*/
+}
+
+@font-face {
+	font-family: "terminal"; 
+	src: url("/fonts/terminal-grotesque_open.otf") format("opentype");
+}
+@font-face {
+	font-family: "abordage";
+	src: url('/fonts/Abordage-Regular.otf') format("opentype");
+}
+
+* { margin: 0; padding: 0; }
+
+body { 
+    background: var(--background);
+    background-size: contain;
+    color: var(--textcolor);
+    font: 1rem var(--body-font);
+}
+
+#container { 
+    max-width: 800px;
+    padding: 10px;
+    margin: 25px auto;
+    display: flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+main { 
+    position: relative;
+    padding:10px;
+    background:var(--mainbg);
+    flex:1 1 calc(80% - 45px);
+    border: 5px outset darkblue; 
+}
+
+main a { 
+    color: var(--mainlink); 
+}
+
+main a:hover, main a:focus { 
+    color: var(--mainlinkhover); 
+}
+
+main p {
+    margin:.5em 0px .5em 0px;
+    line-height:1.2;
+}
+
+main h1 {
+    font: 3em var(--header-font); 
+    color: var(--h1color);
+}
+
+main h2 { 
+    font: 1.7em var(--header-font);
+    color: var(--h2color);
+}
+
+main h3 { 
+    font: 1.4em var(--header-font); 
+    color: var(--h3color);
+}
+
+main h4 {
+    font:0.9em var(--header-font);
+    font-style:italic;
+}
+
+main img { 
+    margin: 5px; 
+    max-width:90%;
+}
+
+main ul { 
+    list-style: inside square;
+    padding: 15px;
+}
+
+main ol { 
+    list-style: numbers;
+    padding: 15px;
+}
+
+main ul li {
+    margin-left: 15px;
+    width: 500px;
+    word-wrap: break-word;
+}
+
+main ol li {
+    margin-left: 35px;
+    width: 500px;
+    word-wrap: break-word;
+}
+
+main input, textarea, select, button { 
+    background: var(--formbg); 
+    color: var(--formtext); 
+    border: 1px solid; 
+    font: 1em var(--body-font);
+    padding: 5px; 
+    margin: 5px;
+}
+
+#sidebar {
+    flex:1 1 20%;
+}
+
+.item {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    padding:15px;
+    background:var(--navbg);
+    margin-bottom:15px;
+    border: 5px outset darkblue; 
+    font-size: 13px;
+}
+
+.menu h2 { 
+    font: 1.5rem var(--header-font); 
+    border-bottom: 3px double var(--navborder);
+    color:var(--navheader);
+    text-align: center;
+}
+
+.menu ul {
+    list-style:none;
+    display:inline;
+    margin:0;
+    text-align: center;
+}
+
+.menu ul li {
+    display:block;
+}
+
+.menu a { 
+    display: block; 
+    text-decoration: none; 
+    padding:5px;
+    color: var(--navlink);
+    background:var(--navlinkbg);
+}
+
+.menu a:hover, .menu a:focus { 
+    color: var(--navlinkhover);
+    background: var(--navlinkbghover);
+}
+
+#center {
+    text-align: center;
+}
+figure {
+    border: 1px solid blue;
+    margin-left: 3px;
+    padding: 6px;
+    display: inline-flex;
+    flex-flow: column;
+    align-items: center;
+    width: 30%;
+}
+cite {
+    color:#7300ff;
+}
+
+
+@media screen and (max-width:800px) {
+    #sidebar {
+        flex-basis: 30%;
+    }
+    
+    main {
+        flex-basis: calc(70% - 45px);
+    }
+    
+}

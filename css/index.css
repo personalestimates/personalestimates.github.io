@@ -1,0 +1,130 @@
+:root {
+    /* Images */
+    
+    /*Fonts*/
+    --body-font: 'abordage'; /* Body text font */
+    --header-font: 'terminal'; /* Font for headers */
+    
+    /* Colors */
+    /* If you want a transparent background for any element, set the value to none */
+    --background: radial-gradient(circle, rgba(0,212,255,0.20219425660889356) 0%, rgba(0,0,154,0.2974323518469888) 50%, rgba(2,0,36,1) 100%), url(/images/background-1.png); /*Main background color*/
+    --textcolor: #000000; /*Body text color*/
+    
+    --mainbg: #ffffff; /*Content background color*/
+    --mainlink: #000000; /*Content link color*/
+    --mainlinkhover: #7300ff; /*Content link hover color*/
+    
+    /*Header text colors*/
+    --h1color: #000000;
+    --h2color: #000000;
+    --h3color: #000000;
+    --h4color: #000000;
+    
+    --formbg: #ffffff; /*Form element background*/
+    --formtext:#000000; /*Form element text color*/
+}
+
+@font-face {
+	font-family: "terminal"; 
+	src: url("/fonts/terminal-grotesque_open.otf") format("opentype");
+}
+@font-face {
+	font-family: "abordage";
+	src: url('/fonts/Abordage-Regular.otf') format("opentype");
+}
+
+
+* { margin: 0; padding: 0; }
+
+body { 
+    background: var(--background);
+    background-size: cover;
+    color: var(--textcolor);
+    font: 1rem var(--body-font);
+}
+
+#container { 
+    max-width: 600px;
+    padding: 8%;
+    margin: 25px auto;
+    display: flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+main { 
+    position: relative;
+    padding:10px;
+    background:var(--mainbg);
+    flex:1 1 calc(80% - 45px);
+    border: 5px outset darkblue; 
+}
+
+main a { 
+    color: var(--mainlink); 
+}
+
+main a:hover, main a:focus { 
+    color: var(--mainlinkhover); 
+}
+
+main p {
+    margin:.5em 0px .5em 0px;
+    line-height:1.5;
+}
+
+main h1 {
+    font: 4em var(--header-font); 
+    color: var(--h1color);
+}
+
+main h2 { 
+    font: 1.7em var(--header-font);
+    color: var(--h2color);
+}
+
+main h3 { 
+    font: 1.4em var(--header-font); 
+    color: var(--h3color);
+}
+
+main h4 {
+    font:0.9em var(--header-font);
+    font-style:italic;
+}
+
+main img { 
+    margin: 5px; 
+    max-width:90%;
+}
+
+main ul { 
+    list-style: inside; 
+}
+
+main ul li ul {
+    margin-left:15px;
+}
+
+main input, textarea, select, button { 
+    background: var(--formbg); 
+    color: var(--formtext); 
+    border: 1px solid; 
+    font: 1em var(--body-font);
+    padding: 5px; 
+    margin: 5px;
+}
+
+#center {
+    text-align: center;
+}
+
+@media screen and (max-width:800px) {
+    #container {
+		padding-top: 30%;
+	}
+	
+	main {
+        flex-basis: calc(70% - 45px);
+    }
+}
